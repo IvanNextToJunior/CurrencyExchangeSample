@@ -16,35 +16,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="cEt-LX-Xsh">
-                                <rect key="frame" x="29" y="364.5" width="356" height="167"/>
-                                <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="EuZ-at-eaO">
-                                        <rect key="frame" x="112.5" y="0.0" width="131" height="32"/>
-                                        <segments>
-                                            <segment title="First"/>
-                                            <segment title="Second"/>
-                                        </segments>
-                                    </segmentedControl>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter sum you would like to exchange" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8dB-n8-ClA">
-                                        <rect key="frame" x="0.0" y="70" width="356" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total sum: 0" textAlignment="natural" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqe-mV-eor">
-                                        <rect key="frame" x="125" y="143" width="106.5" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter sum you would like to exchange" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8dB-n8-ClA">
+                                <rect key="frame" x="29" y="431" width="356" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="EuZ-at-eaO">
+                                <rect key="frame" x="155.5" y="347" width="131" height="32"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total sum: 0" textAlignment="natural" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqe-mV-eor">
+                                <rect key="frame" x="154" y="501" width="106.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exchange for:" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQg-1S-PVR">
+                                <rect key="frame" x="0.0" y="350" width="119.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="cEt-LX-Xsh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CRM-i3-HiU"/>
-                            <constraint firstItem="cEt-LX-Xsh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ymI-Gi-GTu"/>
+                            <constraint firstItem="8dB-n8-ClA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3cO-Mt-799"/>
+                            <constraint firstItem="eqe-mV-eor" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EZC-60-Ul5"/>
+                            <constraint firstItem="8dB-n8-ClA" firstAttribute="top" secondItem="MQg-1S-PVR" secondAttribute="bottom" constant="57" id="Veo-lF-GYG"/>
+                            <constraint firstItem="8dB-n8-ClA" firstAttribute="top" secondItem="EuZ-at-eaO" secondAttribute="bottom" constant="53" id="cyD-Hz-5zT"/>
+                            <constraint firstItem="EuZ-at-eaO" firstAttribute="leading" secondItem="MQg-1S-PVR" secondAttribute="trailing" constant="36" id="k9V-cl-pSP"/>
+                            <constraint firstItem="eqe-mV-eor" firstAttribute="top" secondItem="8dB-n8-ClA" secondAttribute="bottom" constant="36" id="p4g-4M-igZ"/>
+                            <constraint firstItem="8dB-n8-ClA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="v7b-ky-sPY"/>
+                            <constraint firstItem="MQg-1S-PVR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="z89-UX-OgY"/>
                         </constraints>
                     </view>
                     <connections>
