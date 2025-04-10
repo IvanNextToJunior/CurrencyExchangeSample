@@ -9,6 +9,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak private var currencySegmentedControl: UISegmentedControl!
+    
+    @IBOutlet weak private var sumTextField: UITextField!
+    
+    @IBOutlet weak private var totalSumLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
