@@ -15,12 +15,15 @@ class ViewController: UIViewController {
     
     @IBOutlet weak private var totalSumLabel: UILabel!
     
+    private let exchangeRate = ExchangeRate()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         currencySegmentedControl.setTitle("USD", forSegmentAt: 0)
         currencySegmentedControl.setTitle("EUR", forSegmentAt: 1)
         createToolBar()
+        getCurrency(fromObject: {_ in})
     }
     
     
@@ -44,5 +47,27 @@ class ViewController: UIViewController {
         view.endEditing(true)
     }
     
+  private func getCurrency(fromObject: @escaping (Rate) -> Void) {
+      
+        let urlString = "https://api.vatcomply.com/rates"
+       
+        guard let url = URL(string: urlString) else {return}
+        
+        let request = URLRequest(url: url)
+        let task = URLSession.shared.dataTask(with: request) {data, response, error in
+            
+            guard let data = data,
+                  let rate = self.exchangeRate.decodeJSONObject(from: data)
+            
+            else {
+                return
+            }
+           
+            self.totalSumLabel.text = "Total sum: \(String(Int(self.sumTextField.text!)! * rate.usd))"
+            
+
+        }
+        task.resume()
+    }
 }
 
