@@ -13,8 +13,8 @@ class ExchangeRate {
 
  func decodeJSONObject(from data: Data) -> Rate? {
         do {
-            let object = try JSONDecoder().decode(JSONObject.self, from: data)
-            return object.rates
+            let object = try JSONDecoder().decode(Rate.self, from: data)
+            return object
         }
         catch {
             print(error)
