@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak private var currencySegmentedControl: UISegmentedControl!
+  
     
     @IBOutlet weak private var sumTextField: UITextField!
     
@@ -20,8 +20,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        currencySegmentedControl.setTitle("USD", forSegmentAt: 0)
-        currencySegmentedControl.setTitle("EUR", forSegmentAt: 1)
+       
         createToolBar()
         getCurrency(fromObject: {_ in})
     }
