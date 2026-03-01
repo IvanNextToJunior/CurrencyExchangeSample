@@ -57,13 +57,15 @@ class ViewController: UIViewController {
         let task = URLSession.shared.dataTask(with: request) {data, response, error in
             
             guard let data = data,
-                  let rate = self.exchangeRate.decodeJSONObject(from: data)
+                  let rate = self.exchangeRate.decodeJSONObject(from: data),
+                  let usd = rate.usd,
+                  let eur = rate.eur
             
             else {
                 return
             }
            
-            self.totalSumLabel.text = "Total sum: \(String(Int(self.sumTextField.text!)! * rate.usd))"
+            self.totalSumLabel.text = "Total sum: \(String(Int(self.sumTextField.text!)! * eur))"
             
 
         }

@@ -8,9 +8,12 @@
 import Foundation
 
 struct Rate: Codable {
-    let usd: Int
+    let usd: Int?
+    let eur: Int?
 }
+
 
 private enum CodingKeys: String, CodingKey {
     case usd = "USD"
+    case eur = "EUR"
 }
